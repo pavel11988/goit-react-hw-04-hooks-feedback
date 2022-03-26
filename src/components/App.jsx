@@ -17,7 +17,7 @@ export default function App() {
 
   useEffect(() => {
     total = good + neutral + bad;
-    setPositiveFeedback(Math.round((good / total) * 100));
+    if (total) setPositiveFeedback(Math.round((good / total) * 100));
   }, [good, neutral, bad]);
 
   const handleIncrement = name => {
